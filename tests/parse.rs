@@ -118,7 +118,7 @@ fn float() {
 
     {
         let value = ron_wasm::parse("NaN").map_err(JsValue::from).unwrap();
-        assert!(value.as_f64().map(f64::is_nan).unwrap_or_default());
+        assert!(value.as_f64().is_some_and(f64::is_nan));
     }
     {
         let value = ron_wasm::parse("inf").map_err(JsValue::from).unwrap();
@@ -193,6 +193,6 @@ fn optional() {
     }
     {
         let value = ron_wasm::parse("None").map_err(JsValue::from).unwrap();
-        assert_eq!(value, JsValue::UNDEFINED);
+        assert_eq!(value, JsValue::NULL);
     }
 }
