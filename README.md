@@ -35,11 +35,6 @@ wasm-pack build
 
 This will generate build artifacts in the `pkg` directory.
 
-### Example
-
-```ts
-```
-
 ### Documentation
 
 See the [documentation][docs-url] for more details.

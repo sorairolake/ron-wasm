@@ -6,4 +6,7 @@
 current_version = "0.1.0"
 
 [[tool.bumpversion.files]]
+filename = "examples/version.ts"
+
+[[tool.bumpversion.files]]
 filename = "src/lib.rs"

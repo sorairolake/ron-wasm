@@ -22,7 +22,7 @@ default: build
 
 # Run tests
 @test:
-    cargo test
+    wasm-pack test --node
 
 # Run the formatter
 @fmt:
