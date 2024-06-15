@@ -1,0 +1,27 @@
+// SPDX-FileCopyrightText: 2024 Shun Sakai
+//
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
+= Examples
+
+link:json2ron.ts[]::
+
+  An example of converting a JSON string to a RON string.
+
+link:ron2json.ts[]::
+
+  An example of converting a RON string to a JSON string.
+
+== How to run the example
+
+These programs are expected to be run using https://deno.com/[Deno].
+
+[source,sh]
+----
+./json2ron.ts data.json
+# or
+./ron2json.ts data.ron
+----
+
+IMPORTANT: You must run `wasm-pack build -t deno` in the project root directory
+before running the example.
