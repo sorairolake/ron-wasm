@@ -35,31 +35,6 @@ wasm-pack build
 
 This will generate build artifacts in the `pkg` directory.
 
-### Example
-
-```ts
-import * as assert from "jsr:@std/assert";
-
-import * as ron from "./pkg/ron_wasm.js";
-
-const data = {
-  integer: 42,
-  float: 3.14,
-  infinity: Infinity,
-  string: "RON",
-  boolean: true,
-  list: ["John", "Doe"],
-};
-const expected =
-  `{"integer":42,"float":3.14,"infinity":inf,"string":"RON","boolean":true,"list":["John","Doe"]}`;
-
-const ronString = ron.stringify(data);
-assert.assertEquals(ronString, expected);
-
-const obj = ron.parse(ronString);
-assert.assertEquals(obj, data);
-```
-
 ### Documentation
 
 See the [documentation][docs-url] for more details.
