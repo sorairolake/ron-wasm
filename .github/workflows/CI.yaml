@@ -14,13 +14,41 @@ on:
     - cron: "0 0 * * 0"
 
 jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        toolchain:
+          - 1.73.0 # MSRV
+          - stable
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Rust toolchain
+        uses: dtolnay/rust-toolchain@v1
+        with:
+          toolchain: ${{ matrix.toolchain }}
+      - name: Install wasm-pack
+        uses: jetli/wasm-pack-action@v0.4.0
+        with:
+          version: "latest"
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Cache build artifacts
+        uses: Swatinem/rust-cache@v2.7.5
+      - name: Check a package
+        run: wasm-pack build -s sorairolake -t nodejs --dev
+
   test:
     name: Test
     runs-on: ubuntu-22.04
     strategy:
       matrix:
         toolchain:
-          - 1.74.0 # MSRV
+          - 1.73.0
           - stable
     steps:
       - name: Checkout code

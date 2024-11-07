@@ -18,7 +18,7 @@ default: build
 
 # Check a package
 @check:
-    cargo check
+    wasm-pack build -s sorairolake -t nodejs --dev
 
 # Run tests
 @test:

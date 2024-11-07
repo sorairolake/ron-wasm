@@ -18,7 +18,7 @@ project adheres to https://semver.org/[Semantic Versioning].
 
 === Changed
 
-* Bump MSRV to 1.74.0 ({pull-request-url}/21[#21])
+* Update dependencies
 
 == {project-url}/releases/tag/v0.1.0[0.1.0] - 2024-06-15
 
