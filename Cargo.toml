@@ -29,7 +29,7 @@ serde-wasm-bindgen = "0.6.5"
 wasm-bindgen = "0.2.97"
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.45"
+wasm-bindgen-test = "0.3.47"
 
 [lints.clippy]
 cargo = "warn"
