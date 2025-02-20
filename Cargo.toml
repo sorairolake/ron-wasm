@@ -17,8 +17,6 @@ keywords = ["ron"]
 categories = ["encoding", "wasm"]
 include = ["/LICENSES", "/README.md", "/src"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [lib]
 crate-type = ["cdylib", "rlib"]
 
