@@ -7,7 +7,7 @@
 use ron::Value;
 use serde::Serialize;
 use serde_wasm_bindgen::Serializer;
-use wasm_bindgen::{prelude::wasm_bindgen, JsError, JsValue};
+use wasm_bindgen::{JsError, JsValue, prelude::wasm_bindgen};
 
 /// Parses a RON string, constructing the JavaScript value or object described
 /// by the string.

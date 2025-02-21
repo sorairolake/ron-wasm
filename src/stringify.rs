@@ -5,7 +5,7 @@
 //! Converts the JavaScript value to the RON string.
 
 use ron::Value;
-use wasm_bindgen::{prelude::wasm_bindgen, JsError, JsValue};
+use wasm_bindgen::{JsError, JsValue, prelude::wasm_bindgen};
 
 /// Converts a JavaScript value to a RON string.
 ///
