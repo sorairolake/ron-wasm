@@ -17,6 +17,9 @@ keywords = ["ron"]
 categories = ["encoding", "wasm"]
 include = ["/LICENSES", "/README.md", "/src"]
 
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ["--enable-bulk-memory"]
+
 [lib]
 crate-type = ["cdylib", "rlib"]
 
