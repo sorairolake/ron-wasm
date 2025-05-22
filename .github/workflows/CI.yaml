@@ -153,5 +153,5 @@ jobs:
         run: deno lint examples/*.ts
       - name: Type-check
         run: |
-          wasm-pack build -t deno
+          wasm-pack build -t deno --dev
           deno check examples/*.ts
