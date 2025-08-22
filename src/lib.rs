@@ -6,7 +6,7 @@
 //!
 //! [RON]: https://github.com/ron-rs/ron
 
-#![doc(html_root_url = "https://docs.rs/ron-wasm/0.1.0/")]
+#![doc(html_root_url = "https://docs.rs/ron-wasm/0.2.0/")]
 // Lint levels of rustc.
 #![deny(missing_docs)]
 
