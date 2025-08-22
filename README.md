@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2024 Shun Sakai
 
-SPDX-License-Identifier: Apache-2.0 OR MIT
+SPDX-License-Identifier: CC-BY-4.0
 -->
 
 # Wasm Bindings for RON
@@ -35,38 +35,18 @@ wasm-pack build
 
 This will generate build artifacts in the `pkg` directory.
 
-### Example
-
-```ts
-import * as assert from "jsr:@std/assert";
-
-import * as ron from "./pkg/ron_wasm.js";
-
-const data = {
-  integer: 42,
-  float: 3.14,
-  infinity: Infinity,
-  string: "RON",
-  boolean: true,
-  list: ["John", "Doe"],
-};
-const expected =
-  `{"integer":42,"float":3.14,"infinity":inf,"string":"RON","boolean":true,"list":["John","Doe"]}`;
-
-const ronString = ron.stringify(data);
-assert.assertEquals(ronString, expected);
-
-const obj = ron.parse(ronString);
-assert.assertEquals(obj, data);
-```
-
 ### Documentation
 
 See the [documentation][docs-url] for more details.
 
 ## Minimum supported Rust version
 
-The minimum supported Rust version (MSRV) of this library is v1.73.0.
+The minimum supported Rust version (MSRV) of this library is v1.85.0.
+
+## Source code
+
+The upstream repository is available at
+<https://github.com/sorairolake/ron-wasm.git>.
 
 ## Changelog
 
@@ -78,12 +58,12 @@ Please see [CONTRIBUTING.adoc].
 
 ## License
 
-Copyright &copy; 2024 Shun Sakai (see [AUTHORS.adoc])
+Copyright (C) 2024 Shun Sakai (see [AUTHORS.adoc])
 
 This library is distributed under the terms of either the _Apache License 2.0_
 or the _MIT License_.
 
-This project is compliant with version 3.0 of the [_REUSE Specification_]. See
+This project is compliant with version 3.3 of the [_REUSE Specification_]. See
 copyright notices of individual files for more details on copyright and
 licensing information.
 
@@ -102,4 +82,4 @@ licensing information.
 [CHANGELOG.adoc]: CHANGELOG.adoc
 [CONTRIBUTING.adoc]: CONTRIBUTING.adoc
 [AUTHORS.adoc]: AUTHORS.adoc
-[_REUSE Specification_]: https://reuse.software/spec/
+[_REUSE Specification_]: https://reuse.software/spec-3.3/

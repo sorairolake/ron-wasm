@@ -2,77 +2,77 @@
 #
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 
-alias all := default
 alias lint := clippy
 
 # Run default recipe
-default: build
+_default:
+    just -l
 
 # Build a package
-@build:
+build:
     cargo build
 
 # Remove generated artifacts
-@clean:
+clean:
     cargo clean
 
 # Check a package
-@check:
-    cargo check
+check:
+    wasm-pack build -s sorairolake -t nodejs --dev
 
 # Run tests
-@test:
+test:
     wasm-pack test --node
 
 # Run the formatter
-@fmt:
+fmt:
     cargo fmt
 
 # Run the formatter with options
-@fmt-with-options:
-    cargo fmt -- --config "format_code_in_doc_comments=true,wrap_comments=true"
+fmt-with-options:
+    cargo +nightly fmt
 
 # Run the linter
-@clippy:
+clippy:
     cargo clippy -- -D warnings
 
 # Apply lint suggestions
-@clippy-fix:
+clippy-fix:
     cargo clippy --fix --allow-dirty --allow-staged -- -D warnings
 
 # Build examples for the Wasm bindings
-@build-wasm-examples:
+build-wasm-examples:
     wasm-pack build -t deno
 
 # Run `deno fmt`
-@fmt-wasm-examples:
+fmt-wasm-examples:
     deno fmt examples/*.ts
 
 # Run `deno lint`
-@lint-wasm-examples:
+lint-wasm-examples:
     deno lint examples/*.ts
 
 # Run `deno check`
-@type-check-wasm-examples:
+type-check-wasm-examples:
     deno check examples/*.ts
 
 # Run the linter for GitHub Actions workflow files
-@lint-github-actions:
+lint-github-actions:
     actionlint -verbose
 
 # Run the formatter for the README
-@fmt-readme:
+fmt-readme:
     npx prettier -w README.md
 
 # Build the Wasm bindings
-@build-wasm:
+build-wasm:
     wasm-pack build -s sorairolake -t nodejs --release
 
 # Publish the Wasm bindings
-@publish-wasm: build-wasm
+publish-wasm: build-wasm
     wasm-pack publish -a public
 
 # Increment the version
-@bump part:
-    bump-my-version bump {{part}}
-    cargo set-version --bump {{part}}
+bump part:
+    bump-my-version bump {{ part }}
+    cargo set-version --bump {{ part }}

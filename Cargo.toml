@@ -4,10 +4,10 @@
 
 [package]
 name = "ron-wasm"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Shun Sakai <sorairolake@protonmail.ch>"]
-edition = "2021"
-rust-version = "1.73.0"
+edition = "2024"
+rust-version = "1.85.0"
 description = "Wasm Bindings for RON"
 documentation = "https://docs.rs/ron-wasm"
 readme = "README.md"
@@ -17,19 +17,30 @@ keywords = ["ron"]
 categories = ["encoding", "wasm"]
 include = ["/LICENSES", "/README.md", "/src"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ["--enable-bulk-memory", "--enable-nontrapping-float-to-int"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-ron = { version = "0.8.1", features = ["indexmap"] }
-serde = "1.0.203"
+ron = { version = "0.10.1", features = ["indexmap"] }
+serde = "1.0.219"
 serde-wasm-bindgen = "0.6.5"
-wasm-bindgen = "0.2.92"
+wasm-bindgen = "0.2.100"
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.42"
+wasm-bindgen-test = "0.3.50"
+
+[lints.clippy]
+cargo = "warn"
+nursery = "warn"
+pedantic = "warn"
+
+[lints.rust]
+missing_debug_implementations = "deny"
+rust_2018_idioms = { level = "warn", priority = -1 }
+unsafe_code = "forbid"
 
 [profile.release]
 codegen-units = 1
