@@ -18,7 +18,6 @@ use wasm_bindgen::{JsError, JsValue, prelude::wasm_bindgen};
 ///
 /// - The string to parse is not valid RON.
 /// - Cannot construct the JavaScript value or object from a RON value.
-#[inline]
 #[wasm_bindgen]
 pub fn parse(text: &str) -> Result<JsValue, JsError> {
     let value: Value = ron::from_str(text)?;

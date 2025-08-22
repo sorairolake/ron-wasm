@@ -15,7 +15,6 @@ use wasm_bindgen::{JsError, JsValue, prelude::wasm_bindgen};
 ///
 /// - Cannot convert `value` to a RON value.
 /// - Cannot convert a RON value to a RON string.
-#[inline]
 #[wasm_bindgen]
 pub fn stringify(value: JsValue) -> Result<String, JsError> {
     let value: Value = serde_wasm_bindgen::from_value(value)?;
