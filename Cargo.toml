@@ -24,7 +24,7 @@ wasm-opt = ["--enable-bulk-memory", "--enable-nontrapping-float-to-int"]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-ron = { version = "0.10.1", features = ["indexmap"] }
+ron = { version = "0.11.0", features = ["indexmap"] }
 serde = "1.0.219"
 serde-wasm-bindgen = "0.6.5"
 wasm-bindgen = "0.2.100"
