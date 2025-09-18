@@ -42,7 +42,7 @@ build-wasm-examples:
 
 # Run `deno fmt`
 fmt-wasm-examples:
-    deno fmt examples/*.ts
+    deno fmt deno.jsonc examples/*.ts
 
 # Run `deno lint`
 lint-wasm-examples:

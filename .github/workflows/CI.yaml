@@ -93,7 +93,7 @@ jobs:
           components: rustfmt
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2.8.0
-      - name: Check code formatted
+      - name: Run formatter in check mode
         run: cargo fmt -- --check
 
   clippy:
@@ -109,7 +109,7 @@ jobs:
           components: clippy
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2.8.0
-      - name: Check no lint warnings
+      - name: Run linter
         run: cargo clippy -- -D warnings
 
   doc:
@@ -124,7 +124,7 @@ jobs:
           toolchain: stable
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2.8.0
-      - name: Check no `rustdoc` lint warnings
+      - name: Run linter
         run: RUSTDOCFLAGS="-D warnings" cargo doc --no-deps --document-private-items --all-features
 
   wasm-examples:
@@ -147,11 +147,24 @@ jobs:
           version: "latest"
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2.8.0
-      - name: Check code formatted
-        run: deno fmt --check examples/*.ts
-      - name: Check no lint warnings
+      - name: Run formatter in check mode
+        run: deno fmt --check deno.jsonc examples/*.ts
+      - name: Run linter
         run: deno lint examples/*.ts
       - name: Build a package
         run: wasm-pack build -t deno --dev
       - name: Type-check
         run: deno check examples/*.ts
+
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Run formatter in check mode
+        run: npx prettier -c "**.{md,yaml,yml}"
