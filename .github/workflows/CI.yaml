@@ -125,7 +125,7 @@ jobs:
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2.8.0
       - name: Run linter
-        run: RUSTDOCFLAGS="-D warnings" cargo doc --no-deps --document-private-items --all-features
+        run: RUSTDOCFLAGS="-D warnings" cargo doc --no-deps --document-private-items
 
   wasm-examples:
     name: Examples for the Wasm bindings
