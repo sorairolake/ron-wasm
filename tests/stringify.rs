@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
+use std::f64;
+
 use wasm_bindgen::JsValue;
 use wasm_bindgen_test::wasm_bindgen_test;
 
@@ -31,7 +33,7 @@ fn integer() {
 #[wasm_bindgen_test]
 fn float() {
     {
-        let value = ron_wasm::stringify(JsValue::from(std::f64::consts::PI))
+        let value = ron_wasm::stringify(JsValue::from(f64::consts::PI))
             .map_err(JsValue::from)
             .unwrap();
         assert_eq!(value, "3.141592653589793");
