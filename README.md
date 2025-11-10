@@ -8,9 +8,6 @@ SPDX-License-Identifier: CC-BY-4.0
 
 [![CI][ci-badge]][ci-url]
 [![npm Version][npm-version-badge]][npm-version-url]
-[![crates.io Version][crates-version-badge]][crates-version-url]
-![MSRV][msrv-badge]
-[![Docs][docs-badge]][docs-url]
 ![License][license-badge]
 
 **ron-wasm** is the Wasm bindings for [RON] (Rusty Object Notation).
@@ -71,12 +68,7 @@ licensing information.
 [ci-url]: https://github.com/sorairolake/ron-wasm/actions?query=branch%3Adevelop+workflow%3ACI++
 [npm-version-badge]: https://img.shields.io/npm/v/%40sorairolake%2Fron-wasm?style=for-the-badge&logo=npm
 [npm-version-url]: https://www.npmjs.com/package/@sorairolake/ron-wasm
-[crates-version-badge]: https://img.shields.io/crates/v/ron-wasm?style=for-the-badge&logo=rust
-[crates-version-url]: https://crates.io/crates/ron-wasm
-[msrv-badge]: https://img.shields.io/crates/msrv/ron-wasm?style=for-the-badge&logo=rust
-[docs-badge]: https://img.shields.io/docsrs/ron-wasm?style=for-the-badge&logo=docsdotrs&label=Docs.rs
-[docs-url]: https://docs.rs/ron-wasm
-[license-badge]: https://img.shields.io/crates/l/ron-wasm?style=for-the-badge
+[license-badge]: https://img.shields.io/npm/l/%40sorairolake%2Fron-wasm?style=for-the-badge
 [RON]: https://github.com/ron-rs/ron
 [`wasm-pack`]: https://rustwasm.github.io/wasm-pack/
 [CHANGELOG.adoc]: CHANGELOG.adoc

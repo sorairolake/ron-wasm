@@ -8,12 +8,12 @@ version = "0.2.0"
 edition = "2024"
 rust-version = "1.85.0"
 description = "Wasm Bindings for RON"
-documentation = "https://docs.rs/ron-wasm"
 repository = "https://github.com/sorairolake/ron-wasm"
 license = "Apache-2.0 OR MIT"
 keywords = ["ron"]
 categories = ["encoding", "wasm"]
 include = ["/LICENSES", "/README.md", "/src"]
+publish = false
 
 [package.metadata.wasm-pack.profile.release]
 wasm-opt = ["--enable-bulk-memory", "--enable-nontrapping-float-to-int"]
