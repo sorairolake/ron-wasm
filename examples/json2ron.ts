@@ -10,11 +10,8 @@ import * as command from "@cliffy/command";
 
 import * as ron from "../pkg/ron_wasm.js";
 
-import { VERSION } from "./version.ts";
-
 const { args } = await new command.Command()
   .name("json2ron")
-  .version(VERSION)
   .description("An example of converting a JSON string to a RON string.")
   .arguments("[FILE:file]")
   .parse();
