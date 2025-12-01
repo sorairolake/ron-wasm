@@ -43,7 +43,7 @@ jobs:
         with:
           node-version: 22
       - name: Cache build artifacts
-        uses: Swatinem/rust-cache@v2.8.1
+        uses: Swatinem/rust-cache@v2.8.2
       - name: Check a package
         run: wasm-pack build -s sorairolake -t nodejs --dev
 
@@ -76,7 +76,7 @@ jobs:
         with:
           node-version: 22
       - name: Cache build artifacts
-        uses: Swatinem/rust-cache@v2.8.1
+        uses: Swatinem/rust-cache@v2.8.2
       - name: Run tests
         run: wasm-pack test --node
 
@@ -92,7 +92,7 @@ jobs:
           toolchain: nightly
           components: rustfmt
       - name: Cache build artifacts
-        uses: Swatinem/rust-cache@v2.8.1
+        uses: Swatinem/rust-cache@v2.8.2
       - name: Run formatter in check mode
         run: cargo fmt --check
 
@@ -108,7 +108,7 @@ jobs:
           toolchain: stable
           components: clippy
       - name: Cache build artifacts
-        uses: Swatinem/rust-cache@v2.8.1
+        uses: Swatinem/rust-cache@v2.8.2
       - name: Run linter
         run: cargo clippy -- -D warnings
 
@@ -123,7 +123,7 @@ jobs:
         with:
           toolchain: nightly
       - name: Cache build artifacts
-        uses: Swatinem/rust-cache@v2.8.1
+        uses: Swatinem/rust-cache@v2.8.2
       - name: Run linter
         env:
           RUSTDOCFLAGS: "-D warnings"
@@ -148,7 +148,7 @@ jobs:
         with:
           version: "latest"
       - name: Cache build artifacts
-        uses: Swatinem/rust-cache@v2.8.1
+        uses: Swatinem/rust-cache@v2.8.2
       - name: Run formatter in check mode
         run: deno fmt --check deno.jsonc examples/*.ts
       - name: Run linter
