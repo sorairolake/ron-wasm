@@ -32,6 +32,10 @@ wasm-pack build
 
 This will generate build artifacts in the `pkg` directory.
 
+## Examples
+
+Please see the [examples] directory for examples of using this library.
+
 ## Minimum supported Rust version
 
 The minimum supported Rust version (MSRV) of this library is v1.85.0.
@@ -67,6 +71,7 @@ licensing information.
 [license-badge]: https://img.shields.io/npm/l/%40sorairolake%2Fron-wasm?style=for-the-badge
 [RON]: https://github.com/ron-rs/ron
 [`wasm-pack`]: https://rustwasm.github.io/wasm-pack/
+[examples]: examples
 [CHANGELOG.adoc]: CHANGELOG.adoc
 [CONTRIBUTING.adoc]: CONTRIBUTING.adoc
 [AUTHORS.adoc]: AUTHORS.adoc
