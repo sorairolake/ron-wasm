@@ -17,7 +17,7 @@ on:
 jobs:
   check:
     name: Check
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         toolchain-alias:
@@ -42,7 +42,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 26
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2.9.3
       - name: Check a package
@@ -50,7 +50,7 @@ jobs:
 
   test:
     name: Test
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         toolchain-alias:
@@ -75,7 +75,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 26
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2.9.3
       - name: Run tests
@@ -83,7 +83,7 @@ jobs:
 
   rustfmt:
     name: Rustfmt
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -99,7 +99,7 @@ jobs:
 
   clippy:
     name: Clippy
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -115,7 +115,7 @@ jobs:
 
   doc:
     name: Documentation
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -132,7 +132,7 @@ jobs:
 
   wasm-examples:
     name: Examples for the Wasm bindings
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -161,13 +161,13 @@ jobs:
 
   prettier:
     name: Prettier
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
       - name: Setup Node.js environment
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 26
       - name: Run formatter in check mode
         run: npx prettier -c "**.{md,yaml,yml}"
